@@ -21,8 +21,12 @@ module SC
       elsif File.exists?("/Applications/SuperCollider.app/Contents/MacOS/sclang")
         return "/Applications/SuperCollider.app/Contents/MacOS/sclang"
       else
-        warn "Could not find sclang executable.\nPlease make sure that SC is either installed at the default location e.g. '/Applications/SuperCollider.app' on a mac or add sclang to your shells search path."
-        exit
+        if File.exists?("/Applications/SuperCollider.app/Contents/MacOS/sclang")
+          return "/Applications/SuperCollider.app/Contents/MacOS/sclang"
+        else
+          warn "Could not find sclang executable.\nPlease make sure that SC is either installed at the default location e.g. '/Applications/SuperCollider.app' on a mac or add sclang to your shells search path."
+          exit
+        end
       end
     else
       return @@sclang_path
