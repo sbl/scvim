@@ -1,3 +1,9 @@
+# Important notice
+
+This repository has moved to http://github.com/supercollider/scvim.
+Please refer to the new URL for latest development.
+
+
 SCVim (> 3.5)
 ==============
 
